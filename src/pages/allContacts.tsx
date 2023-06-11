@@ -19,10 +19,10 @@ const AllContacts: React.FC = () => {
   };
 
   return (
-    <div className="p-10">
-      <div className="w-full flex justify-center items-center">
+    <div className="md:p-10">
+      <div className="w-screen flex justify-center items-center">
         <button
-          className="my-4 px-4 py-2 bg-red-500 text-white rounded-lg"
+          className="my-4 px-4 py-2 bg-red-500 text-white rounded-lg mx-auto"
           onClick={handleAddCard}
         >
           Add Card
@@ -34,7 +34,7 @@ const AllContacts: React.FC = () => {
           contacts.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md p-4 flex flex-col justify-between"
+              className="bg-white rounded-lg shadow-md p-4 flex flex-col justify-between mx-3"
             >
               <div>
                 <p className="text-lg font-semibold">
