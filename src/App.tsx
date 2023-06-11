@@ -22,7 +22,7 @@ function App() {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <div className="flex flex-row h-full min-h-screen overflow-x-hidden">
-          <div className="relative h-screen bg-blue-900 z-50">
+          <div className="relative min-h-screen bg-blue-900 z-50">
             <button
               className={`${
                 !sidebarVisible ? "left-0" : "left-32"
