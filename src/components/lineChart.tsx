@@ -51,6 +51,7 @@ const LineChart: React.FC<any> = (props) => {
     legend: {
       position: "top",
     },
+    color: ["red", "#ff0aff", "#07c800"],
   };
 
   return <Line {...config} />;
