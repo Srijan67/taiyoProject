@@ -63,8 +63,13 @@ const AllContacts: React.FC = () => {
             </div>
           ))
         ) : (
-          <div className="w-96 bg-red-500">
-            <p className="text-gray-500 text-center">No data available</p>
+          <div className=" w-screen mx-auto justify-center overflow-hidden relative md:right-9">
+            <p className="text-white text-xl font-semibold text-center">
+              No data available.
+            </p>
+            <p className="text-white text-lg font-semibold text-center">
+              Please Click on Add button to get data.
+            </p>
           </div>
         )}
       </div>
