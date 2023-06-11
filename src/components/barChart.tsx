@@ -6,22 +6,32 @@ interface PropsChild {
 }
 interface PropsData {
   cases?: number;
-  deaths?: number;
+  active?: number;
   recovered?: number;
+  deaths?: number;
 }
 
 const BarChart: React.FC<any> = (props) => {
   console.log(props);
-  let { cases, deaths, recovered } = props.data;
+  // let { cases, deaths, recovered } = props?.data;
+  let cases = props?.data?.cases;
+  let deaths = props?.data?.deaths;
+  let recovered = props?.data?.recovered;
+  let active = props?.data?.active;
+
   let data: PropsChild[] = [
     {
-      name: "cases",
+      name: "Cases",
       value: cases,
     },
-    { name: "recovered", value: recovered },
+    { name: "Recovered", value: recovered },
     {
-      name: "deaths",
+      name: "Deaths",
       value: deaths,
+    },
+    {
+      name: "Active",
+      value: active,
     },
   ];
   const config: any = {

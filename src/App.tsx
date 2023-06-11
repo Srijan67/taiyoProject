@@ -12,7 +12,7 @@ import CovidChart from "./pages/covidChart";
 
 function App() {
   let persistor = persistStore(store);
-  const [sidebarVisible, setSidebarVisible] = useState<boolean>(true);
+  const [sidebarVisible, setSidebarVisible] = useState<boolean>(false);
 
   const toggleSidebar = () => {
     setSidebarVisible(!sidebarVisible);
@@ -21,7 +21,7 @@ function App() {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <div className="flex flex-row h-full min-h-screen">
+        <div className="flex flex-row h-full min-h-screen overflow-x-hidden">
           <div className="relative h-screen bg-blue-900 z-50">
             <button
               className={`${

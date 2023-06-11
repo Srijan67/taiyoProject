@@ -3,13 +3,13 @@ import { Line } from "@ant-design/plots";
 
 const LineChart: React.FC<any> = (props) => {
   const data: any = {
-    cases: props.data.cases,
-    deaths: props.data.deaths,
-    recovered: props.data.recovered,
+    cases: props?.data?.cases,
+    deaths: props?.data?.deaths,
+    recovered: props?.data?.recovered,
   };
 
   const chartData = Object.keys(data).reduce((result: any[], key: string) => {
-    const entries = Object.entries(data[key]);
+    const entries = Object.entries(data[key] || {});
     entries.forEach(([date, value]) => {
       result.push({
         date: date,
@@ -19,7 +19,7 @@ const LineChart: React.FC<any> = (props) => {
     });
     return result;
   }, []);
-  console.log(chartData, " chart dsata");
+  console.log(chartData, " chart data");
 
   const config: any = {
     data: chartData,
