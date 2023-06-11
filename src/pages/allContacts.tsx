@@ -25,7 +25,7 @@ const AllContacts: React.FC = () => {
           className="my-4 px-4 py-2 bg-red-500 text-white rounded-lg mx-auto"
           onClick={handleAddCard}
         >
-          Add Card
+          Add Contact
         </button>
       </div>
 
