@@ -35,6 +35,19 @@ const BarChart: React.FC<any> = (props) => {
     },
   ];
   const config: any = {
+    theme: {
+      components: {
+        legend: {
+          common: {
+            itemName: {
+              style: {
+                fill: "#fff", //side label
+              },
+            },
+          },
+        },
+      },
+    },
     data,
     xField: "value",
     yField: "name",
@@ -42,6 +55,7 @@ const BarChart: React.FC<any> = (props) => {
     legend: { position: "top" },
     height: 300,
     width: 500,
+    color: ["red", "#07c800", "#ff0aff", "#ff5500"],
   };
 
   return <Bar {...config} />;

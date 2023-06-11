@@ -4,33 +4,44 @@ import { NavLink } from "react-router-dom";
 const SideBar = ({ sidebarVisible }: { sidebarVisible: boolean }) => {
   return (
     <div
-      className={`flex-1 ${
-        sidebarVisible ? "w-32" : "w-0"
-      } transition-width duration-300 ease-in-out`}
+      className={`${
+        sidebarVisible ? "left-0" : "-left-32"
+      } absolute h-full bg-blue-900 w-32 transition-left duration-300`}
     >
       <nav className="flex flex-col h-full">
         <NavLink
           to="/"
-          className="p-4 text-white hover:bg-gray-200"
-          // @ts-ignore
-          activeClassName="bg-gray-200 text-gray-800"
-          exact
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "p-4 text-white hover:bg-indigo-600 transition-colors duration-300 ease-in-out"
+              : isActive
+              ? "p-4 bg-indigo-600 text-white"
+              : "p-4 text-white hover:bg-indigo-600 transition-colors duration-300 ease-in-out"
+          }
         >
           All Contacts
         </NavLink>
         <NavLink
           to="/add"
-          className="p-4 text-white hover:bg-gray-200"
-          // @ts-ignore
-          activeClassName="bg-gray-200 text-gray-800"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "p-4 text-white hover:bg-indigo-600 transition-colors duration-300 ease-in-out"
+              : isActive
+              ? "p-4 bg-indigo-600 text-white"
+              : "p-4 text-white hover:bg-indigo-600 transition-colors duration-300 ease-in-out"
+          }
         >
           Add Contact
         </NavLink>
         <NavLink
           to="/covid"
-          className="p-4 text-white hover:bg-gray-200"
-          // @ts-ignore
-          activeClassName={"bg-gray-200 text-gray-800"}
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "p-4 text-white hover:bg-indigo-600 transition-colors duration-300 ease-in-out"
+              : isActive
+              ? "p-4 bg-indigo-600 text-white"
+              : "p-4 text-white hover:bg-indigo-600 transition-colors duration-300 ease-in-out"
+          }
         >
           Covid Chart
         </NavLink>

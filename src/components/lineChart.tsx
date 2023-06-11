@@ -22,6 +22,19 @@ const LineChart: React.FC<any> = (props) => {
   console.log(chartData, " chart data");
 
   const config: any = {
+    theme: {
+      components: {
+        legend: {
+          common: {
+            itemName: {
+              style: {
+                fill: "#fff", //side label
+              },
+            },
+          },
+        },
+      },
+    },
     data: chartData,
     xField: "date",
     yField: "value",

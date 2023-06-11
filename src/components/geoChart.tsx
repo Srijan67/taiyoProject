@@ -3,6 +3,7 @@ import { Chart } from "react-google-charts";
 
 const GeoChart: React.FC<any> = (props) => {
   let countryData = props?.data || [];
+  console.log(countryData, " this si cdata");
 
   const data = countryData.map((country: any) => [
     country.country,
@@ -11,7 +12,16 @@ const GeoChart: React.FC<any> = (props) => {
   ]);
 
   data.unshift(["Country", "Total Cases", "deaths"]);
-
+  //DEmo Data format
+  // const data = [
+  //   ["Country", "Popularity"],
+  //   ["Germany", 200],
+  //   ["United States", 300],
+  //   ["Brazil", 400],
+  //   ["Canada", 500],
+  //   ["France", 600],
+  //   ["RU", 700],
+  // ];
   return (
     <Chart
       chartEvents={[
