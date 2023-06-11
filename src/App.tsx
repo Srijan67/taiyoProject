@@ -10,6 +10,7 @@ import AddContact from "./pages/addContact";
 import EditContact from "./pages/editContact";
 import CovidChart from "./pages/covidChart";
 import SideBar from "./components/sideBar";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 
 function App() {
   let persistor = persistStore(store);
@@ -27,10 +28,10 @@ function App() {
             <button
               className={`${
                 !sidebarVisible ? "left-0" : "left-32"
-              } absolute top-0 p-4 py-2 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white rounded-lg shadow-lg text-xl transition-left duration-300`}
+              } absolute top-0 py-3 px-4 flex justify-center items-center bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white rounded-lg shadow-lg text-xl transition-left duration-300`}
               onClick={toggleSidebar}
             >
-              {sidebarVisible ? "-" : "+"}
+              {sidebarVisible ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             </button>
 
             <SideBar sidebarVisible={sidebarVisible} />
